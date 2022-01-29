@@ -21,6 +21,6 @@ interface CarService {
 
     @GET(ApplicationConstants.DETAIL_API_ENDPOINT)
     suspend fun getCarDetail(
-        @Query("id") id: Long
+        @Query("id") id: Int
     ): CarDetail
 }

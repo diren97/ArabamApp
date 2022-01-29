@@ -15,7 +15,13 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(layoutId: Int)
         super.onViewCreated(view, savedInstanceState)
         binding = bind(view)
 
+        initUserInterface()
+        initObservers()
     }
+
+    abstract fun initUserInterface()
+
+    abstract fun initObservers()
 
     override fun onDestroyView() {
         super.onDestroyView()

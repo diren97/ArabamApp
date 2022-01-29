@@ -59,23 +59,12 @@
                 android:src="@drawable/ic_round_add_location_24" />
 
             <TextView
-                android:id="@+id/cityNameTxt"
+                android:id="@+id/locationTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginBottom="8dp"
                 android:layout_toEndOf="@+id/locationImgView"
-                android:textSize="11sp"
-                tool:text="İstanbul" />
-
-
-            <TextView
-                android:id="@+id/townTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginBottom="8dp"
-                android:layout_toEndOf="@+id/cityNameTxt"
                 android:textSize="11sp"
                 tool:text="İstanbul" />
 
