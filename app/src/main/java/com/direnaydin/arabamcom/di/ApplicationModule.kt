@@ -1,7 +1,7 @@
 package com.direnaydin.arabamcom.di
 
 import androidx.viewbinding.BuildConfig
-import com.direnaydin.arabamcom.constants.ApplicationConstants
+import com.direnaydin.arabamcom.constants.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +17,7 @@ import javax.inject.Singleton
 object ApplicationModule {
 
     @Provides
-    fun provideBaseUrl() = ApplicationConstants.BASE_URL
+    fun provideBaseUrl() = Constants.BASE_URL
 
     @Singleton
     @Provides

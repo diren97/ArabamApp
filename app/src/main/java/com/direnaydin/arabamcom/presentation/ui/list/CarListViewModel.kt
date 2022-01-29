@@ -15,8 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class CarListViewModel @Inject constructor(private val carRepository: CarRepository) : BaseViewModel() {
 
-    private val _users = MutableLiveData<Resource<Car>>()
-    val users: LiveData<Resource<Car>> get() = _users
+    private val _carlist = MutableLiveData<Resource<Car>>()
+    val carlists: LiveData<Resource<Car>> get() = _carlist
 
 
     fun dataFetct() {
@@ -24,11 +24,11 @@ class CarListViewModel @Inject constructor(private val carRepository: CarReposit
         viewModelScope.launch {
             Log.d("test","Burada 1")
 
-            _users.postValue(Resource.loading(null))
+            _carlist.postValue(Resource.loading(null))
 
                 carRepository.getCars(1,0,null,null,null,null, null,10).let {
                     Log.d("test","Burada ${it.size}")
-                 _users.postValue(Resource.success(it))
+                 _carlist.postValue(Resource.success(it))
 
                 }
 
