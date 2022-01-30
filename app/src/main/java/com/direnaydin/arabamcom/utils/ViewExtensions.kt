@@ -1,7 +1,5 @@
 package com.direnaydin.arabamcom.utils
 
-import android.content.Context
-import android.content.res.Resources
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide

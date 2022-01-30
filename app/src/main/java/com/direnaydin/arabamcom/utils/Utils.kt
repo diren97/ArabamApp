@@ -1,6 +1,7 @@
 package com.direnaydin.arabamcom.utils
 
 import android.content.Context
+import com.direnaydin.arabamcom.extensions.getScreenHeight
 import com.direnaydin.arabamcom.extensions.getScreenWidth
 
 object Utils {

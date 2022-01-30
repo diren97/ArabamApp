@@ -8,6 +8,7 @@ import com.direnaydin.arabamcom.presentation.ui.base.BaseViewModel
 import com.direnaydin.arabamcom.repository.CarRepository
 import com.direnaydin.arabamcom.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

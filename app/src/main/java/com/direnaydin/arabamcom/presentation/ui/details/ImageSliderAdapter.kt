@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.viewpager.widget.PagerAdapter
 import com.direnaydin.arabamcom.R
+import com.direnaydin.arabamcom.extensions.getScreenWidth
+import com.direnaydin.arabamcom.utils.Utils
 import com.direnaydin.arabamcom.utils.loadUrlImage
 
 class ImageSliderAdapter(private val context: Context, private val photos: List<String>): PagerAdapter() {
@@ -20,7 +22,7 @@ class ImageSliderAdapter(private val context: Context, private val photos: List<
         val image = view.findViewById<ImageView>(R.id.sliderImgView)
 
         image.loadUrlImage(
-            photos[position].replace("{0}", "1920x1080")
+            photos[position].replace("{0}", "${Utils.getCalculateImageForDeviceSize(view.context)}x${view.context.getScreenWidth()}")
         )
 
         container.addView(view)

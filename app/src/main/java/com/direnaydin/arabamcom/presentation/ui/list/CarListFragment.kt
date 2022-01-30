@@ -42,7 +42,6 @@ class CarListFragment :
                 }
             }
         })
-
     }
 
     private fun initItemClickListener() = object : ItemClickListener {
