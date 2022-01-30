@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="spacing_0.5">0.5dp</dimen>
+    <dimen name="spacing_1">1dp</dimen>
+    <dimen name="spacing_2">2dp</dimen>
+    <dimen name="spacing_3">3dp</dimen>
+    <dimen name="spacing_4">4dp</dimen>
+    <dimen name="spacing_5">5dp</dimen>
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_10">10dp</dimen>
+    <dimen name="spacing_12">12dp</dimen>
+    <dimen name="spacing_14">14dp</dimen>
+    <dimen name="spacing_15">15dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_18">18dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
+    <dimen name="spacing_28">28dp</dimen>
+    <dimen name="spacing_32">32dp</dimen>
+    <dimen name="spacing_36">36dp</dimen>
+    <dimen name="spacing_40">40dp</dimen>
+    <dimen name="spacing_75">75dp</dimen>
+    <dimen name="spacing_80">80dp</dimen>
+    <dimen name="spacing_100">100dp</dimen>
+    <dimen name="spacing_300">300dp</dimen>
+
+
+    <dimen name="textSizes_8">8sp</dimen>
+    <dimen name="textSizes_10">10sp</dimen>
+    <dimen name="textSizes_11">11sp</dimen>
+    <dimen name="textSizes_12">12sp</dimen>
+    <dimen name="textSizes_13">13sp</dimen>
+    <dimen name="textSizes_14">14sp</dimen>
+    <dimen name="textSizes_15">15sp</dimen>
+    <dimen name="textSizes_16">16sp</dimen>
+    <dimen name="textSizes_18">18sp</dimen>
+    <dimen name="textSizes_20">20sp</dimen>
+    <dimen name="textSizes_22">22sp</dimen>
+    <dimen name="textSizes_24">24sp</dimen>
+    <dimen name="textSizes_26">26sp</dimen>
+    <dimen name="textSizes_28">28sp</dimen>
+
+</resources>

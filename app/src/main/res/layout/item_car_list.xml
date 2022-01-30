@@ -14,99 +14,106 @@
             type="com.direnaydin.arabamcom.presentation.util.ItemClickListener" />
     </data>
 
-    <RelativeLayout
-        android:id="@+id/item_car_card"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="?attr/selectableItemBackground"
-        android:clickable="true"
-        android:focusable="true"
-        android:onClick="@{() -> listener.onItemClick(dataHolder)}">
+        android:layout_height="@dimen/spacing_80"
+        android:layout_marginHorizontal="@dimen/spacing_8"
+        android:layout_marginVertical="@dimen/spacing_8"
+        android:elevation="@dimen/spacing_8"
+        app:cardCornerRadius="@dimen/spacing_5"
+        app:strokeColor="@color/transparent"
+        app:strokeWidth="@dimen/spacing_0.5">
 
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0.05dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/grey" />
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:onClick="@{() -> listener.onItemClick(dataHolder.id)}"
+            android:orientation="horizontal">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/detail_fragment_car_image_layout"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:elevation="0dp"
-            app:cardCornerRadius="5dp"
-            app:strokeColor="@color/red"
-            app:strokeWidth="0.5dp">
-
-            <ImageView
-                android:id="@+id/carImgView"
-                android:layout_width="100dp"
-                android:layout_height="70dp"
-                android:scaleType="centerInside"
-                app:loadUrlImage="@{dataHolder.photo}" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/detail_fragment_car_image_layout">
-
-            <TextView
-                android:id="@+id/carFeaturesTxt"
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center_vertical"
-                android:maxLines="2"
-                android:text="@{dataHolder.modelName}"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                tool:text="Arabam" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp">
+                android:elevation="@dimen/spacing_8"
+                app:cardCornerRadius="@dimen/spacing_5"
+                app:strokeColor="@color/light_grey"
+                app:strokeWidth="@dimen/spacing_1">
 
                 <ImageView
-                    android:id="@+id/locationImgView"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginStart="4dp"
-                    android:src="@drawable/ic_round_add_location_24" />
+                    android:id="@+id/carImgView"
+                    android:layout_width="@dimen/spacing_100"
+                    android:layout_height="@dimen/spacing_75"
+                    android:scaleType="centerInside"
+                    app:loadUrlImage="@{dataHolder.photo}" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/locationTxt"
+                    android:id="@+id/carFeaturesTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_toEndOf="@+id/locationImgView"
-                    android:text="@{dataHolder.location.cityName}"
-                    android:textSize="11sp"
-                    tool:text="İSTANBUL" />
-
-                <TextView
-                    android:id="@+id/priceTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="@{dataHolder.priceFormatted}"
-                    android:textColor="@color/red"
-                    android:textSize="11sp"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@{dataHolder.modelName}"
+                    android:textSize="@dimen/textSizes_13"
                     android:textStyle="bold"
-                    tool:text="100000" />
-            </RelativeLayout>
-        </RelativeLayout>
-    </RelativeLayout>
+                    android:textColor="@color/dark_grey"
+                    tool:text="Arabam" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="@dimen/spacing_36"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/locationImgView"
+                        android:layout_width="@dimen/spacing_15"
+                        android:layout_height="@dimen/spacing_15"
+                        android:layout_marginStart="@dimen/spacing_4"
+                        android:layout_marginEnd="@dimen/spacing_4"
+                        android:src="@drawable/ic_round_add_location_24" />
+
+                    <TextView
+                        android:id="@+id/locationTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/locationImgView"
+                        android:text='@{dataHolder.location.cityName +"/"+ dataHolder.location.townName}'
+                        android:textSize="@dimen/textSizes_11"
+                        android:textStyle="bold"
+                        tool:text="İSTANBUL" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_8"
+                        android:gravity="right"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/priceTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{dataHolder.priceFormatted}"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/textSizes_11"
+                            android:textStyle="bold"
+                            tool:text="100000" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 </layout>

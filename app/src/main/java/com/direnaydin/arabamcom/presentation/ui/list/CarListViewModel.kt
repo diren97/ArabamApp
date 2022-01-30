@@ -25,6 +25,7 @@ class CarListViewModel @Inject constructor(private val carRepository: CarReposit
     private fun fetchData() {
         viewModelScope.launch {
             _carList.postValue(Resource.loading(null))
+            delay(2000)
             carRepository.getCars(1, 0, null, null, null, null, null, 10).let {
                 _carList.postValue(Resource.success(it))
             }

@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/spacing_8"
+    android:layout_marginVertical="@dimen/spacing_8"
+    android:elevation="@dimen/spacing_10"
+    app:cardCornerRadius="@dimen/spacing_8"
+    app:strokeColor="@color/grey"
+    app:strokeWidth="@dimen/spacing_2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:paddingStart="@dimen/spacing_4"
+            android:paddingTop="@dimen/spacing_12"
+            android:paddingEnd="@dimen/spacing_12">
+
+            <TextView
+                android:id="@+id/keyKmTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/km_txt"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/colonKmTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <TextView
+                android:id="@+id/colonKmTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/valueKmTxt"
+                app:layout_constraintStart_toEndOf="@+id/keyKmTxt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/valueKmTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_8"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/colonKmTxt"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:paddingStart="@dimen/spacing_4"
+            android:paddingTop="@dimen/spacing_12"
+            android:paddingEnd="@dimen/spacing_12">
+
+            <TextView
+                android:id="@+id/keyColorTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/color_txt"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/colonColorTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <TextView
+                android:id="@+id/colonColorTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/valueColorTxt"
+                app:layout_constraintStart_toEndOf="@+id/keyColorTxt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/valueColorTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_8"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/colonColorTxt"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:paddingStart="@dimen/spacing_4"
+            android:paddingTop="@dimen/spacing_12"
+            android:paddingEnd="@dimen/spacing_12">
+
+            <TextView
+                android:id="@+id/keyYearTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/year_txt"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/colonYearTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <TextView
+                android:id="@+id/colonYearTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/valueYearTxt"
+                app:layout_constraintStart_toEndOf="@+id/keyYearTxt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/valueYearTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_8"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/colonYearTxt"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:paddingStart="@dimen/spacing_4"
+            android:paddingTop="@dimen/spacing_12"
+            android:paddingEnd="@dimen/spacing_12">
+
+            <TextView
+                android:id="@+id/keyGearTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/gear_txt"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/colonGearTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <TextView
+                android:id="@+id/colonGearTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/valueGearTxt"
+                app:layout_constraintStart_toEndOf="@+id/keyGearTxt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/valueGearTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_8"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/colonGearTxt"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:paddingStart="@dimen/spacing_4"
+            android:paddingTop="@dimen/spacing_12"
+            android:paddingEnd="@dimen/spacing_12">
+
+            <TextView
+                android:id="@+id/keyFuelTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/fuel_txt"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/colonFuelTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <TextView
+                android:id="@+id/colonFuelTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/valueFuelTxt"
+                app:layout_constraintStart_toEndOf="@+id/keyFuelTxt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/valueFuelTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_8"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/colonFuelTxt"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:paddingStart="@dimen/spacing_4"
+            android:paddingTop="@dimen/spacing_12"
+            android:paddingEnd="@dimen/spacing_12">
+
+            <TextView
+                android:id="@+id/keyNameSurnameTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nameSurname_txt"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/colonNameSurnameTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <TextView
+                android:id="@+id/colonNameSurnameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/valueNameSurnameTxt"
+                app:layout_constraintStart_toEndOf="@+id/keyNameSurnameTxt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/valueNameSurnameTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_8"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/colonNameSurnameTxt"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_16"
+            android:layout_marginEnd="@dimen/spacing_16"
+            android:paddingStart="@dimen/spacing_4"
+            android:paddingTop="@dimen/spacing_12"
+            android:paddingEnd="@dimen/spacing_12">
+
+            <TextView
+                android:id="@+id/keyPhoneTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_txt"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/colonPhoneTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <TextView
+                android:id="@+id/colonPhoneTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=":"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/valuePhoneTxt"
+                app:layout_constraintStart_toEndOf="@+id/keyPhoneTxt"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/valuePhoneTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_8"
+                android:textColor="@color/dark_grey"
+                android:textSize="@dimen/textSizes_12"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/colonPhoneTxt"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_1"
+            android:layout_marginTop="@dimen/spacing_12"
+            android:background="@color/grey" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

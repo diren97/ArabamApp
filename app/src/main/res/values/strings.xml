@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Arabam.com</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="km_txt">KM</string>
+    <string name="color_txt">Color</string>
+    <string name="year_txt">Year</string>
+    <string name="gear_txt">Gear</string>
+    <string name="fuel_txt">Fuel</string>
+    <string name="nameSurname_txt">Name - Surname</string>
+    <string name="phone_txt">Phone</string>
 </resources>
