@@ -1,4 +1,4 @@
-package com.direnaydin.arabamcom.network
+package com.direnaydin.arabamcom.network.remote.api
 
 import com.direnaydin.arabamcom.constants.Constants
 import com.direnaydin.arabamcom.network.model.Car

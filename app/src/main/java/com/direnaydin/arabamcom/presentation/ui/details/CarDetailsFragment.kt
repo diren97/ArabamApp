@@ -1,31 +1,41 @@
 package com.direnaydin.arabamcom.presentation.ui.details
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.annotation.SuppressLint
 import android.view.View
-import android.view.ViewGroup
-import androidx.navigation.fragment.navArgs
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.direnaydin.arabamcom.R
 import com.direnaydin.arabamcom.databinding.FragmentCarDetailsBinding
-import com.direnaydin.arabamcom.presentation.ui.BaseFragment
-import com.direnaydin.arabamcom.presentation.ui.BaseViewModel
+import com.direnaydin.arabamcom.presentation.ui.base.BaseFragment
+import com.direnaydin.arabamcom.presentation.ui.base.BaseViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class CarDetailsFragment :
     BaseFragment<FragmentCarDetailsBinding, BaseViewModel>(R.layout.fragment_car_details) {
 
-
-    override val viewModel: BaseViewModel?
-        get() = null
-
-    private val navArgs by navArgs<CarDetailsFragmentArgs>()
+    override val viewModel by viewModels<CarDetailsViewModel>()
 
     override fun bind(view: View) = FragmentCarDetailsBinding.bind(view)
-
 
     override fun initUserInterface() {
     }
 
-    override fun initObservers() = Unit
+    @SuppressLint("SetTextI18n")
+    override fun initObservers() {
+
+        viewModel.carDetailItem.observe(viewLifecycleOwner, Observer {
+
+
+           /* val sliderAdapter =
+                it.data?.photo?.let { ImageSliderAdapter(requireContext(), it) }
+            binding.detailFragmentTitle.text = it.data?.title
+            binding.detailFragmentCityName.text = it.data?.location?.cityName + "-" + it.data?.location?.townName
+            binding.detailFragmentCategory.text = it.data?.category?.name
+            binding.detailFragmentUserName.text = it.data?.modelName*/
+        })
+    }
+    companion object{
+        const val KEY_CAR_ITEM = "item"
+    }
 }

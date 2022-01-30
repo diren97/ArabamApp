@@ -1,6 +1,6 @@
 package com.direnaydin.arabamcom.repository
 
-import com.direnaydin.arabamcom.network.CarService
+import com.direnaydin.arabamcom.network.remote.api.CarService
 import com.direnaydin.arabamcom.network.model.Car
 import com.direnaydin.arabamcom.network.model.CarDetail
 import javax.inject.Inject

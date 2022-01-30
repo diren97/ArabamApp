@@ -1,5 +1,9 @@
 package com.direnaydin.arabamcom.network.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class CarItem(
     val category: Category,
     val date: String,
@@ -12,4 +16,4 @@ data class CarItem(
     val priceFormatted: String,
     val properties: List<Property>,
     val title: String
-)
+) : Parcelable

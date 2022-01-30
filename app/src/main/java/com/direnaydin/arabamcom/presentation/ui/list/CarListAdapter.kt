@@ -9,24 +9,23 @@ import com.direnaydin.arabamcom.databinding.ItemCarListBinding
 import com.direnaydin.arabamcom.network.model.CarItem
 import com.direnaydin.arabamcom.presentation.util.ItemClickListener
 
-class CarListAdapter(private val listener: ItemClickListener) : ListAdapter<CarItem,CarListViewHolder>(ItemDiffCallback()) {
-
-    var originalList: ArrayList<CarItem> = arrayListOf()
-    set(value) {
-        field = value
-        submitList(value)
-    }
+class CarListAdapter(private val listener: ItemClickListener) :
+    ListAdapter<CarItem, CarListViewHolder>(ItemDiffCallback()) {
     private lateinit var parentRecyclerView: RecyclerView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarListViewHolder {
-        val binding = ItemCarListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CarListViewHolder(binding)
+        return CarListViewHolder(
+            ItemCarListBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
         super.onAttachedToRecyclerView(recyclerView)
         parentRecyclerView = recyclerView
-
     }
 
     override fun onBindViewHolder(holder: CarListViewHolder, position: Int) {

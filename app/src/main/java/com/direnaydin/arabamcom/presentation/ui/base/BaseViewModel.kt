@@ -1,4 +1,4 @@
-package com.direnaydin.arabamcom.presentation.ui
+package com.direnaydin.arabamcom.presentation.ui.base
 
 import androidx.lifecycle.ViewModel
 

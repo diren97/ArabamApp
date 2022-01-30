@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_car_details">
         <argument
             android:name="item"
-            app:argType="com.direnaydin.arabamcom.network.model.Car"
+            app:argType="com.direnaydin.arabamcom.network.model.CarItem"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>

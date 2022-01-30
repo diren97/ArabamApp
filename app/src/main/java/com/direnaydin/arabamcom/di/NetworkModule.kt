@@ -1,6 +1,6 @@
 package com.direnaydin.arabamcom.di
 
-import com.direnaydin.arabamcom.network.CarService
+import com.direnaydin.arabamcom.network.remote.api.CarService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
