@@ -6,10 +6,11 @@ import com.direnaydin.arabamcom.network.model.Car
 import com.direnaydin.arabamcom.network.model.CarDetail
 import com.direnaydin.arabamcom.network.model.CarItem
 import com.direnaydin.arabamcom.network.model.Sort
+import io.reactivex.Single
 import javax.inject.Singleton
 
 interface CarRepository {
-    suspend fun getCars(
+     fun getCars(
         sort: Int,
         sortDirection: Int,
         minDate: String?,
@@ -18,7 +19,7 @@ interface CarRepository {
         maxYear: Int?,
         skip: Int?,
         take: Int
-    ): Car
+    ): Single<Car>
 
     suspend fun getCarDetail(id: Int): CarDetail
 }

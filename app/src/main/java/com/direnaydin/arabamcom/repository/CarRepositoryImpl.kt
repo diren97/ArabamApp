@@ -3,10 +3,11 @@ package com.direnaydin.arabamcom.repository
 import com.direnaydin.arabamcom.network.remote.api.CarService
 import com.direnaydin.arabamcom.network.model.Car
 import com.direnaydin.arabamcom.network.model.CarDetail
+import io.reactivex.Single
 import javax.inject.Inject
 
 class CarRepositoryImpl @Inject constructor(private val apiService: CarService) : CarRepository {
-    override suspend fun getCars(
+    override  fun getCars(
         sort: Int,
         sortDirection: Int,
         minDate: String?,
@@ -15,7 +16,7 @@ class CarRepositoryImpl @Inject constructor(private val apiService: CarService) 
         maxYear: Int?,
         skip: Int?,
         take: Int
-    ): Car {
+    ): Single<Car> {
         return apiService.getCars(sort, sortDirection,minDate,maxDate,minYear,maxYear,skip, take)
     }
 

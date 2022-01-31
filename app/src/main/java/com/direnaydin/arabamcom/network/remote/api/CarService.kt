@@ -3,12 +3,13 @@ package com.direnaydin.arabamcom.network.remote.api
 import com.direnaydin.arabamcom.constants.Constants
 import com.direnaydin.arabamcom.network.model.Car
 import com.direnaydin.arabamcom.network.model.CarDetail
+import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface CarService {
     @GET(Constants.LISTING_API_ENDPOINT)
-    suspend fun getCars(
+     fun getCars(
         @Query("sort") sort: Int = 1,
         @Query("sortDirection") sortDirection: Int = 0,
         @Query("minDate") minDate: String?,
@@ -17,7 +18,7 @@ interface CarService {
         @Query("maxYear") maxYear: Int?,
         @Query("skip") skip: Int?,
         @Query("take") take: Int = 10
-    ): Car
+    ): Single<Car>
 
     @GET(Constants.DETAIL_API_ENDPOINT)
     suspend fun getCarDetail(

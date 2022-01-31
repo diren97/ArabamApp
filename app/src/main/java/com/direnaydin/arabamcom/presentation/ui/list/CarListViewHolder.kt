@@ -6,7 +6,7 @@ import com.direnaydin.arabamcom.network.model.CarItem
 import com.direnaydin.arabamcom.presentation.util.ItemClickListener
 
 class CarListViewHolder(private val binding: ItemCarListBinding) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(carList: CarItem, listener: ItemClickListener) {
+    fun bind(carList: CarItem?, listener: ItemClickListener) {
         binding.dataHolder = carList
         binding.listener = listener
         binding.executePendingBindings()

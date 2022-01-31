@@ -12,4 +12,5 @@
     <color name="light_grey">#D1D0D0</color>
     <color name="dark_grey">#686868</color>
     <color name="transparent">#0fff</color>
+    <color name="pale_grey">#f6f8fd</color>
 </resources>
