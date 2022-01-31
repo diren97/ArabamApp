@@ -135,7 +135,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/spacing_8"
-                        android:layout_marginVertical="@dimen/spacing_8" />
+                        android:layout_marginVertical="@dimen/spacing_8"
+                        bind:detailItem="@{detailItem}" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,11 +11,10 @@
             type="com.direnaydin.arabamcom.network.model.CarDetail" />
     </data>
 
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/pale_grey"
         android:layout_marginHorizontal="@dimen/spacing_8"
         android:layout_marginVertical="@dimen/spacing_8"
         android:elevation="@dimen/spacing_10"
@@ -66,6 +68,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_8"
+                    android:text="@{detailItem.properties[0].value}"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/textSizes_12"
                     android:textStyle="bold"
@@ -73,7 +76,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/colonKmTxt"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="@{detailItem.properties[0].value}"
                     tools:text="Value" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -119,6 +121,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_8"
+                    android:text="@{detailItem.properties[1].value}"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/textSizes_12"
                     android:textStyle="bold"
@@ -126,7 +129,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/colonColorTxt"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="@{detailItem.properties[1].value}"
                     tools:text="Value" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -172,6 +174,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_8"
+                    android:text="@{detailItem.properties[2].value}"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/textSizes_12"
                     android:textStyle="bold"
@@ -179,7 +182,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/colonYearTxt"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="@{detailItem.properties[2].value}"
                     tools:text="Value" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -225,6 +227,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_8"
+                    android:text="@{detailItem.properties[3].value}"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/textSizes_12"
                     android:textStyle="bold"
@@ -232,7 +235,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/colonGearTxt"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="@{detailItem.properties[3].value}"
                     tools:text="Value" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -278,6 +280,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_8"
+                    android:text="@{detailItem.properties[4].value}"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/textSizes_12"
                     android:textStyle="bold"
@@ -285,7 +288,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/colonFuelTxt"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="@{detailItem.properties[4].value}"
                     tools:text="Value" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -331,6 +333,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_8"
+                    android:text="@{detailItem.userInfo.nameSurname}"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/textSizes_12"
                     android:textStyle="bold"
@@ -338,7 +341,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/colonNameSurnameTxt"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="@{detailItem.userInfo.nameSurname}"
                     tools:text="Value" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -384,6 +386,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_8"
+                    android:text="@{detailItem.userInfo.phone}"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/textSizes_12"
                     android:textStyle="bold"
@@ -391,7 +394,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/colonPhoneTxt"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="@{detailItem.userInfo.phone}"
                     tools:text="Value" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
