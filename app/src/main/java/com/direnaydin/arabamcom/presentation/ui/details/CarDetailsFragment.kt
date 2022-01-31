@@ -34,13 +34,6 @@ class CarDetailsFragment :
                         binding.carDetailImgViewPager.currentItem.plus(1).toString()
                     binding.detailItem = it.data
                     hideProgress()
-                    //binding.itemCarProperty.valueKmTxt.text = it.data!!.properties[0].value
-                    binding.itemCarProperty.valueColorTxt.text = it.data!!.properties[1].value
-                    binding.itemCarProperty.valueYearTxt.text = it.data.properties[2].value
-                    binding.itemCarProperty.valueGearTxt.text = it.data.properties[3].value
-                    binding.itemCarProperty.valueFuelTxt.text = it.data.properties[4].value
-                    binding.itemCarProperty.valueNameSurnameTxt.text = it.data.userInfo.nameSurname
-                    binding.itemCarProperty.valuePhoneTxt.text = it.data.userInfo.phone
                 }
                 Status.ERROR -> {
                     // error snackbar use on view
