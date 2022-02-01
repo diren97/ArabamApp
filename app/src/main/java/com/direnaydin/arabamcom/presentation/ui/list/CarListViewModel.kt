@@ -4,9 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.*
-import com.direnaydin.arabamcom.network.model.Car
 import com.direnaydin.arabamcom.network.model.CarItem
-import com.direnaydin.arabamcom.network.remote.api.CarService
 import com.direnaydin.arabamcom.presentation.ui.base.BaseViewModel
 import com.direnaydin.arabamcom.presentation.ui.list.adapter.CarListPaging
 import com.direnaydin.arabamcom.repository.CarRepository
@@ -17,11 +15,11 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CarListViewModel @Inject constructor(private val carRepository: CarRepository, private val carService: CarService) :
+class CarListViewModel @Inject constructor(private val carRepository: CarRepository) :
     BaseViewModel() {
 
-    private val _carList = MutableLiveData<Resource<Car>>()
-    val carList1: LiveData<Resource<Car>> get() = _carList
+    private val _loadingState = MutableLiveData<Resource<Boolean>>()
+    val loadingState: LiveData<Resource<Boolean>> get() = _loadingState
 
     init {
         fetchData()
@@ -29,10 +27,10 @@ class CarListViewModel @Inject constructor(private val carRepository: CarReposit
 
     private fun fetchData() {
         viewModelScope.launch {
-            _carList.postValue(Resource.loading(null))
+            _loadingState.postValue(Resource.success(true))
             delay(2000)
-            getCarData()
-            _carList.postValue(Resource.success(null))
+            carList
+            _loadingState.postValue(Resource.success(false))
         }
     }
 

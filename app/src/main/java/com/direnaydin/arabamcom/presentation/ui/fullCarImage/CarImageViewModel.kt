@@ -18,8 +18,8 @@ class CarImageViewModel @Inject constructor(savedStateHandle: SavedStateHandle) 
 
     init {
         _photoUrl.postValue(Resource.loading(null))
-        savedStateHandle.get<List<String>>(CarDetailsFragment.KEY_PHOTO_URL)?.let {
-            _photoUrl.postValue(Resource.success(it))
+        savedStateHandle.get<Array<String>>(CarDetailsFragment.KEY_PHOTO_URL)?.let {
+            _photoUrl.postValue(Resource.success(it.toList()))
         } ?: kotlin.run {
             _photoUrl.postValue(Resource.error("Error Data", null))
         }

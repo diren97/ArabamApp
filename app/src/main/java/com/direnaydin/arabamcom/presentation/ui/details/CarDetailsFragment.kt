@@ -11,6 +11,7 @@ import com.direnaydin.arabamcom.presentation.ui.base.BaseFragment
 import com.direnaydin.arabamcom.presentation.ui.base.BaseViewModel
 import com.direnaydin.arabamcom.presentation.util.OnClickListener
 import com.direnaydin.arabamcom.utils.Status
+import com.direnaydin.arabamcom.utils.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,7 +31,7 @@ class CarDetailsFragment :
             when (it.status) {
                 Status.LOADING -> showProgress()
                 Status.SUCCESS -> {
-                    val sliderAdapter = it.data?.photos?.let { ImageSliderAdapter(requireContext(), it) }
+                    val sliderAdapter = it.data?.photos?.let { ImageSliderAdapter(requireContext(), it, this) }
                     binding.carDetailImgViewPager.adapter = sliderAdapter
                     binding.sliderNumberTxt.text =
                         binding.carDetailImgViewPager.currentItem.plus(1).toString()
@@ -38,7 +39,9 @@ class CarDetailsFragment :
                     hideProgress()
                 }
                 Status.ERROR -> {
-                    // error snackbar use on view
+                    it.message?.let {
+                        showSnackBar(this@CarDetailsFragment, it)
+                    }
                 }
             }
         })

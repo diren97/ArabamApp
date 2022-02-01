@@ -10,7 +10,6 @@ import com.direnaydin.arabamcom.presentation.ui.base.BaseFragment
 import com.direnaydin.arabamcom.presentation.ui.details.CarDetailsFragment
 import com.direnaydin.arabamcom.presentation.ui.list.adapter.CarListAdapter
 import com.direnaydin.arabamcom.presentation.util.ItemClickListener
-import com.direnaydin.arabamcom.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,6 +27,14 @@ class CarListFragment :
 
     override fun initObservers() {
         hideProgress()
+
+        viewModel.loadingState.observe(viewLifecycleOwner, Observer {
+            if (it.data == true)
+                showProgress()
+            else
+                hideProgress()
+        })
+
         viewModel.carList.observe(viewLifecycleOwner, Observer {
             binding.rvCarList.adapter = carListAdapter.apply {
                 submitData(lifecycle, it)
