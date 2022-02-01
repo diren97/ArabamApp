@@ -4,12 +4,10 @@
     xmlns:tool="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="detailItem"
             type="com.direnaydin.arabamcom.network.model.CarDetail" />
-        <variable
-            name="listener"
-            type="com.direnaydin.arabamcom.presentation.util.OnClickListener" />
     </data>
 
     <LinearLayout
@@ -64,10 +62,8 @@
                         android:id="@+id/carDetailImgViewPager"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/spacing_300"
-                        android:layout_marginTop="@dimen/spacing_4"
-                        android:onClick="@{() -> listener.onItemClick(detailItem.photos)}"
-                        android:clickable="true"
-                        android:focusable="true" />
+                        android:layout_marginTop="@dimen/spacing_4" />
+
                 </androidx.cardview.widget.CardView>
 
                 <TextView

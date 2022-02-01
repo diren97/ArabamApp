@@ -22,7 +22,6 @@ class CarDetailsFragment :
     override fun bind(view: View) = FragmentCarDetailsBinding.bind(view)
 
     override fun initUserInterface() {
-        binding.listener = this
     }
 
     override fun initObservers() {
@@ -68,7 +67,7 @@ class CarDetailsFragment :
     }
 
     override fun onItemClick(photos: List<out String>) {
-        navigate(R.id.toCarImageFragment, Bundle().apply {
+          navigate(R.id.toCarImageFragment, Bundle().apply {
             putStringArray(KEY_PHOTO_URL, photos.toTypedArray())
         })
     }
