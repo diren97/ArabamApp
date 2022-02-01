@@ -1,5 +1,6 @@
 package com.direnaydin.arabamcom.presentation.ui.details
 
+import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -8,18 +9,20 @@ import com.direnaydin.arabamcom.R
 import com.direnaydin.arabamcom.databinding.FragmentCarDetailsBinding
 import com.direnaydin.arabamcom.presentation.ui.base.BaseFragment
 import com.direnaydin.arabamcom.presentation.ui.base.BaseViewModel
+import com.direnaydin.arabamcom.presentation.util.OnClickListener
 import com.direnaydin.arabamcom.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CarDetailsFragment :
-    BaseFragment<FragmentCarDetailsBinding, BaseViewModel>(R.layout.fragment_car_details) {
+    BaseFragment<FragmentCarDetailsBinding, BaseViewModel>(R.layout.fragment_car_details), OnClickListener {
 
     override val viewModel by viewModels<CarDetailsViewModel>()
 
     override fun bind(view: View) = FragmentCarDetailsBinding.bind(view)
 
     override fun initUserInterface() {
+        binding.listener = this
     }
 
     override fun initObservers() {
@@ -61,5 +64,12 @@ class CarDetailsFragment :
 
     companion object {
         const val KEY_CAR_ID = "carId"
+        const val KEY_PHOTO_URL = "photoUrl"
+    }
+
+    override fun onItemClick(photos: List<out String>) {
+        navigate(R.id.toCarImageFragment, Bundle().apply {
+            putStringArray(KEY_PHOTO_URL, photos.toTypedArray())
+        })
     }
 }

@@ -9,7 +9,7 @@
         android:id="@+id/carListFragment"
         android:name="com.direnaydin.arabamcom.presentation.ui.list.CarListFragment"
         android:label="fragment_car_list"
-        tools:layout="@layout/fragment_car_list" >
+        tools:layout="@layout/fragment_car_list">
         <action
             android:id="@+id/toCarDetailsFragment"
             app:destination="@id/carDetailsFragment" />
@@ -22,5 +22,18 @@
         <argument
             android:name="carId"
             app:argType="integer" />
+        <action
+            android:id="@+id/toCarImageFragment"
+            app:destination="@id/carImageFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/carImageFragment"
+        android:name="com.direnaydin.arabamcom.presentation.ui.fullCarImage.CarImageFragment"
+        android:label="fragment_car_image"
+        tools:layout="@layout/fragment_car_image">
+        <argument
+            android:name="photoUrl"
+            app:argType="string[]" />
+    </fragment>
+
 </navigation>
