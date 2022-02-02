@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tool="http://schemas.android.com/tools">
 
@@ -56,6 +57,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:elevation="@dimen/spacing_8">
 
                     <androidx.viewpager.widget.ViewPager
@@ -64,18 +66,34 @@
                         android:layout_height="@dimen/spacing_300"
                         android:layout_marginTop="@dimen/spacing_4" />
 
-                </androidx.cardview.widget.CardView>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_130"
+                        android:layout_gravity="center"
+                        android:gravity="bottom">
 
-                <TextView
-                    android:id="@+id/sliderNumberTxt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:textColor="@color/grey"
-                    android:textSize="@dimen/textSizes_16"
-                    android:textStyle="bold"
-                    tool:text="1/2" />
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="@dimen/spacing_36"
+                            android:layout_height="@dimen/spacing_32"
+                            android:backgroundTint="@color/dark_grey"
+                            android:elevation="@dimen/spacing_8"
+                            app:cardCornerRadius="@dimen/spacing_8">
+                            <TextView
+                                android:id="@+id/sliderNumberTxt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:background="@color/transparent"
+                                android:backgroundTint="@color/transparent"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/textSizes_16"
+                                android:textStyle="bold"
+                                tool:text="1/2" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <View
                     android:id="@+id/divider"
@@ -97,7 +115,10 @@
                         android:id="@+id/carDetailUsername"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="@dimen/spacing_4"
                         android:layout_marginTop="@dimen/spacing_8"
+                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:text="@{detailItem.title}"
                         android:textColor="@color/red"
                         android:textSize="@dimen/textSizes_14"
@@ -109,6 +130,8 @@
                         android:id="@+id/carDetailCategory"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:layout_marginTop="@dimen/spacing_8"
                         android:text="@{detailItem.modelName}"
                         android:textColor="@color/dark_grey"
@@ -120,6 +143,8 @@
                         android:id="@+id/carDetailLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:layout_marginTop="@dimen/spacing_8"
                         android:layout_marginBottom="@dimen/spacing_10"
                         android:text='@{detailItem.location.cityName +"/"+ detailItem.location.townName}'

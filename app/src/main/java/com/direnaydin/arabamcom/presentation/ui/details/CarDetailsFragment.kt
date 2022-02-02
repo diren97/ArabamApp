@@ -1,5 +1,6 @@
 package com.direnaydin.arabamcom.presentation.ui.details
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -16,7 +17,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CarDetailsFragment :
-    BaseFragment<FragmentCarDetailsBinding, BaseViewModel>(R.layout.fragment_car_details), OnClickListener {
+    BaseFragment<FragmentCarDetailsBinding, BaseViewModel>(R.layout.fragment_car_details),
+    OnClickListener {
 
     override val viewModel by viewModels<CarDetailsViewModel>()
 
@@ -25,16 +27,18 @@ class CarDetailsFragment :
     override fun initUserInterface() {
     }
 
+    @SuppressLint("SetTextI18n")
     override fun initObservers() {
 
         viewModel.carDetailItem.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.LOADING -> showProgress()
                 Status.SUCCESS -> {
-                    val sliderAdapter = it.data?.photos?.let { ImageSliderAdapter(requireContext(), it, this) }
+                    val sliderAdapter =
+                        it.data?.photos?.let { ImageSliderAdapter(requireContext(), it, this) }
                     binding.carDetailImgViewPager.adapter = sliderAdapter
                     binding.sliderNumberTxt.text =
-                        binding.carDetailImgViewPager.currentItem.plus(1).toString()
+                        binding.carDetailImgViewPager.currentItem.plus(1).toString() + "/2"
                     binding.detailItem = it.data
                     hideProgress()
                 }
@@ -56,7 +60,7 @@ class CarDetailsFragment :
             }
 
             override fun onPageSelected(position: Int) {
-                binding.sliderNumberTxt.text = position.plus(1).toString()
+                binding.sliderNumberTxt.text = position.plus(1).toString() + "/2"
             }
 
             override fun onPageScrollStateChanged(state: Int) {
@@ -70,7 +74,7 @@ class CarDetailsFragment :
     }
 
     override fun onItemClick(photos: List<out String>) {
-          navigate(R.id.toCarImageFragment, Bundle().apply {
+        navigate(R.id.toCarImageFragment, Bundle().apply {
             putStringArray(KEY_PHOTO_URL, photos.toTypedArray())
         })
     }
