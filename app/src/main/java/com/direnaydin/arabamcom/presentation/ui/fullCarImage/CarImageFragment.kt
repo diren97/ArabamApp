@@ -8,6 +8,7 @@ import com.direnaydin.arabamcom.databinding.FragmentCarImageBinding
 import com.direnaydin.arabamcom.presentation.ui.base.BaseFragment
 import com.direnaydin.arabamcom.presentation.ui.base.BaseViewModel
 import com.direnaydin.arabamcom.utils.Status
+import com.direnaydin.arabamcom.utils.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,7 +33,9 @@ class CarImageFragment :
                     hideProgress()
                 }
                 Status.ERROR -> {
-                    // error snackbar use on view
+                    it.message?.let {
+                        showSnackBar(this@CarImageFragment, it)
+                    }
                 }
             }
         })

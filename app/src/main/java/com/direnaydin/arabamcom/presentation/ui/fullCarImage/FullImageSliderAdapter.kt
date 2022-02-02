@@ -10,7 +10,8 @@ import androidx.viewpager.widget.PagerAdapter
 import com.direnaydin.arabamcom.R
 import com.direnaydin.arabamcom.utils.loadUrlImage
 
-class FullImageSliderAdapter (private val context: Context, private val photos: List<String>): PagerAdapter() {
+class FullImageSliderAdapter(private val context: Context, private val photos: List<String>) :
+    PagerAdapter() {
 
     private lateinit var inflater: LayoutInflater
 

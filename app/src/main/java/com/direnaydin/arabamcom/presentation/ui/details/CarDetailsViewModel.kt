@@ -1,6 +1,5 @@
 package com.direnaydin.arabamcom.presentation.ui.details
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
@@ -26,14 +25,12 @@ class CarDetailsViewModel @Inject constructor(savedStateHandle: SavedStateHandle
             getCarDetail(it)
         } ?: kotlin.run {
             _carDetailItem.postValue(Resource.error("Error Data", null))
-            // null olduğu durumda davranış olmalı.
         }
     }
 
     private fun getCarDetail(carId: Int){
         viewModelScope.launch {
             carRepository.getCarDetail(carId).let {
-                Log.d("deneme1", "url : ${it.photos}")
                 _carDetailItem.postValue(Resource.success(it))
             }
         }
